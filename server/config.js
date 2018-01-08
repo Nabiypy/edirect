@@ -5,12 +5,12 @@ var nodemailer = require('nodemailer'),
     config = module.exports;
 
 config.db = {
-  user: 'root',
+  user: 'areash5_hanson',
   password: 'digimas14',
-  name: 'egal_findr'
+  name: 'areash5_findmeagent'
 };
 config.db.details = {
-  host: 'localhost',
+  host: '172.81.119.95',
   port: 3306,
   dialect: 'mysql'
 };

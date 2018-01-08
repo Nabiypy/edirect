@@ -28,6 +28,7 @@ AgentController.addAgent = function (req, res) {
       email: req.body.email,
       region: req.body.region,
       city: req.body.city,
+      town: req.body.town,      
       position: req.body.position,
       geolocation: req.body.geolocation
     };
