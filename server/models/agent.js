@@ -19,6 +19,7 @@ var modelDefinition = {
     maritalStatus: { type: Sequelize.STRING },
     mobile: { type: Sequelize.STRING, unique: true },
     email: { type: Sequelize.STRING },
+    education: {type: Sequelize.TEXT},
     region: { type: Sequelize.STRING },
     city: { type: Sequelize.TEXT },
     town: { type: Sequelize.STRING },

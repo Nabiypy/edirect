@@ -26,6 +26,7 @@ AgentController.addAgent = function (req, res) {
       maritalStatus: req.body.maritalStatus,
       mobile: req.body.mobile,
       email: req.body.email,
+      education: req.body.education,
       region: req.body.region,
       city: req.body.city,
       town: req.body.town,      
