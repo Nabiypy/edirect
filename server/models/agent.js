@@ -21,7 +21,7 @@ var modelDefinition = {
     email: { type: Sequelize.STRING },
     region: { type: Sequelize.STRING },
     city: { type: Sequelize.TEXT },
-    town: { type: Sequelize.TEXT },
+    town: { type: Sequelize.STRING },
     position: { type: Sequelize.STRING},
     geolocation: { type: Sequelize.TEXT},
     otherInfo: { type: Sequelize.TEXT }
