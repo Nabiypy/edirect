@@ -14,6 +14,7 @@ config.db.details = {
   port: 3306,
   dialect: 'mysql'
 };
+
 config.db.production = {
   url: 'postgres://lbewwfjc:5y1kaCk-JnnhXKAhm4jNXw7arsgxaf6V@baasu.db.elephantsql.com:5432/lbewwfjc',
   dialect: 'postgres'

@@ -12,7 +12,9 @@ var config = require('../config'),
     HubtelServiceController = require('../controllers/hubtel.service.controller'),
     ContactServiceController = require('../controllers/contact.service.controller'),
     SosServiceController = require('../controllers/sos.service.controller'),
-    AgentController = require('../controllers/agent.service.controller');
+    AgentController = require('../controllers/agent.service.controller'),
+    DirectoryController = require('../controllers/directory.server.controller');
+
 
 var APIRoutes = function(passport) {
     router.post('/signup', AuthController.signUp);
@@ -28,6 +30,10 @@ var APIRoutes = function(passport) {
     router.post('/savecontacts', ContactServiceController.saveContacts);
     router.post('/share', SosServiceController.shareLocation);
     router.post('/onboard', AgentController.addAgent);
+    router.post('/directory', DirectoryController.createDirectory);
+    router.post('/business', DirectoryController.createBusiness);
+
+    
 
     // GET Routes.
     router.get('/profile', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.user, UserController.index));
@@ -40,9 +46,22 @@ var APIRoutes = function(passport) {
     router.get('/locations', SosServiceController.locations);
     router.get('/location/:userId', SosServiceController.location);
     router.get('/location/account/:account', SosServiceController.locationByAccount);
+
     router.get('/agents', AgentController.agents);
-    router.get('/agent/:userId', AgentController.agents);
-    
+    router.get('/agent/:id', AgentController.agents);
+    router.put('/agent/update/:id', AgentController.updateAgent);
+    router.delete('/agent/remove/:id', AgentController.removeAgent);
+
+    router.get('/directories', DirectoryController.getDirectories);
+    router.get('/directory/:id', DirectoryController.getDirectory);
+    router.put('/directory/update/:id', DirectoryController.updateDirectory);
+    router.delete('/directory/remove/:id', DirectoryController.removeDirectory);
+
+    router.get('/businessess', DirectoryController.getBusinessess);
+    router.get('/business/:id', DirectoryController.getBusiness);
+    router.put('/business/update/:id', DirectoryController.updateBusiness);
+    router.delete('/business/remove/:id', DirectoryController.removeBusiness);
+
 
     return router;
 };

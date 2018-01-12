@@ -55,7 +55,7 @@ AgentController.agents = function (req, res) {
 }
 //get agent by id
 AgentController.agent = function (req, res) {
-    Agent.findById(req.params.userId)
+    Agent.findById(req.params.id)
     .then(function (agent) {
         res.status(200).json(agent);
         console.log('error: false ', 'message: get agent ~', agent);
